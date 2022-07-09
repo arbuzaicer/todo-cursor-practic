@@ -1,0 +1,136 @@
+// variables
+
+$gray: gray;
+$secondary-text: #afafaf;
+$primary-text: #ffffff;
+$dark-primary: #000000;
+$primary-blue: #809cff;
+$primray-danger: #ff8080;
+$component-bg: #1d1d1d;
+$border: #979797;
+$component-bg-secondary: #363636;
+
+// sizes
+
+$padding-horizontal: 24px;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $dark-primary;
+  padding: 70px $padding-horizontal 0 $padding-horizontal;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-input {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-indent: 48px;
+    border-radius: 4px;
+    color: $primary-text;
+    border: 1px solid $border;
+    background-color: $component-bg;
+
+    ::placeholder {
+      color: $secondary-text;
+    }
+  }
+
+  i {
+    left: 12px;
+    font-size: 24px;
+    position: absolute;
+    color: $secondary-text;
+  }
+}
+
+.todo-list-container {
+  margin-top: 67px;
+}
+
+.single {
+  height: 72px;
+  display: flex;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  align-items: center;
+  padding: 0 10px;
+  background-color: $component-bg-secondary;
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+
+    &:checked ~ .content {
+      .title {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+      color: $primary-text;
+    }
+
+    .date {
+      margin-top: 6px;
+      font-size: 14px;
+      color: $secondary-text;
+      text-transform: capitalize;
+    }
+  }
+
+  .actions {
+    margin-left: auto;
+
+    i {
+      padding: 5px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.3s;
+      color: $secondary-text;
+
+      &:hover {
+        background-color: lighten($component-bg-secondary, 10%);
+      }
+
+      &:last-child {
+        margin-left: 10px;
+      }
+    }
+  }
+}
